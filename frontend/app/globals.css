@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+/* Tailwind v4 — explicit source paths prevent class-detection gaps in dev mode */
+@import "tailwindcss";
+@source "../app/**/*.{js,jsx,ts,tsx}";
+@source "../components/**/*.{js,jsx,ts,tsx}";
+@source "../lib/**/*.{js,jsx,ts,tsx}";
+
+* {
+    font-family: Outfit, sans-serif;
+}
+
+.active hr {
+    @apply block;
+}
+
+::-webkit-scrollbar {
+    @apply hidden;
+}
+
+@media (max-width: 740px) {
+    .active p {
+        @apply text-white bg-[#5f6FFF];
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
